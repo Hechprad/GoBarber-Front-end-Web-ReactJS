@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 interface ContainerProps {
   isFocused: boolean;
   isFilled: boolean;
+  isErrored: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -14,11 +15,18 @@ export const Container = styled.div<ContainerProps>`
   color: #666360;
 
   ${(props) =>
+    props.isErrored &&
+    css`
+      border-color: #c53030;
+    `}
+
+  ${(props) =>
     props.isFocused &&
     css`
       border-color: #ff9000;
       color: #ff9000;
     `}
+
   ${(props) =>
     props.isFilled &&
     css`
@@ -45,5 +53,14 @@ export const Input = styled.input`
 
   &::placeholder {
     color: #666360;
+  }
+`;
+
+export const Error = styled.div`
+  height: 20px;
+  margin-left: 16px;
+
+  svg {
+    margin: 0;
   }
 `;
