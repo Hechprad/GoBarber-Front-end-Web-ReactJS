@@ -7,8 +7,8 @@ import * as Yup from 'yup';
 import getValidationErrors from '../../utils/getValidationErrors';
 
 import logoImg from '../../assets/logo.svg';
-import Button from '../../components/button';
-import Input from '../../components/input';
+import Button from '../../components/Button';
+import Input from '../../components/Input';
 
 import * as s from './styles';
 
